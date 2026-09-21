@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>张三 · 个人作品集</title>
+<meta name="description" content="张三的个人作品集网站 —— 前端开发工程师，专注于创造美观且高效的数字体验。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- 预加载动画 -->
+<div id="preloader">
+  <div class="loader-logo">JS<span>.</span></div>
+</div>
+
+<!-- 自定义鼠标光点（大屏效果） -->
+<div class="cursor-dot" id="cursorDot"></div>
+
+<!-- 顶部导航栏 -->
+<header class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="#home" class="logo">张三<span>.dev</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link active" data-nav>首页</a>
+      <a href="#about" class="nav-link" data-nav>关于我</a>
+      <a href="#skills" class="nav-link" data-nav>技能</a>
+      <a href="#projects" class="nav-link" data-nav>作品</a>
+      <a href="#timeline" class="nav-link" data-nav>经历</a>
+      <a href="#contact" class="nav-link" data-nav>联系</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+      <a href="#contact" class="btn btn-primary btn-sm nav-cta">聊一聊</a>
+      <button class="hamburger" id="hamburger" aria-label="打开菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero 首屏 -->
+<section id="home" class="hero">
+  <div class="hero-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="grid-overlay"></div>
+  </div>
+  <div class="container hero-inner">
+    <p class="hero-eyebrow reveal-up">👋 你好，很高兴见到你</p>
+    <h1 class="hero-title reveal-up" style="--delay:0.1s">
+      我是 <span class="gradient-text">张三</span><br>
+      <span class="typing-wrap">一名<span id="typedText" class="typed"></span><span class="cursor-blink">|</span></span>
+    </h1>
+    <p class="hero-desc reveal-up" style="--delay:0.2s">
+      专注于打造简洁、优雅且高性能的 Web 产品。3 年+ 前端开发经验，
+      热爱设计与代码之间的平衡艺术。
+    </p>
+    <div class="hero-actions reveal-up" style="--delay:0.3s">
+      <a href="#projects" class="btn btn-primary">查看作品 <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="#" class="btn btn-outline" id="downloadCV"><i class="fa-solid fa-download"></i> 下载简历</a>
+    </div>
+    <div class="hero-socials reveal-up" style="--delay:0.4s">
+      <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="#" aria-label="领英"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="#" aria-label="微信"><i class="fa-brands fa-weixin"></i></a>
+      <a href="#" aria-label="邮箱"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </div>
+  <a href="#about" class="scroll-indicator" aria-label="向下滚动">
+    <span></span>
+    <small>SCROLL</small>
+  </a>
+</section>
+
+<!-- 关于我 -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="section-tag">ABOUT ME</span>
+      <h2 class="section-title">关于我</h2>
+      <p class="section-sub">用代码构建想法，用设计传递温度</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-visual reveal-left">
+        <div class="avatar-frame">
+          <div class="avatar-circle">
+            <span>张</span>
+          </div>
+          <div class="avatar-badge"><i class="fa-solid fa-code"></i> 3+ 年经验</div>
+        </div>
+      </div>
+      <div class="about-content reveal-right">
+        <h3>你好，我是张三 <span class="wave">👋</span></h3>
+        <p>
+          我是一名充满热情的前端开发工程师，擅长使用现代前端技术栈构建响应式、
+          高性能的 Web 应用。我相信优秀的产品源于对细节的执着追求，
+          以及对用户体验的深刻理解。
+        </p>
+        <p>
+          工作之余，我喜欢研究新技术、参与开源项目，也享受用设计和代码
+          解决实际问题带来的成就感。期待与你合作，一起创造有价值的产品。
+        </p>
+        <div class="about-info">
+          <div><i class="fa-solid fa-user"></i> <b>姓名：</b>张三</div>
+          <div><i class="fa-solid fa-location-dot"></i> <b>城市：</b>中国 · 上海</div>
+          <div><i class="fa-solid fa-briefcase"></i> <b>职位：</b>前端开发工程师</div>
+          <div><i class="fa-solid fa-graduation-cap"></i> <b>状态：</b>开放合作机会</div>
+        </div>
+        <div class="stats-row">
+          <div class="stat-item"><span class="stat-num" data-count="3">0</span><small>年经验</small></div>
+          <div class="stat-item"><span class="stat-num" data-count="42">0</span><small>完成项目</small></div>
+          <div class="stat-item"><span class="stat-num" data-count="18">0</span><small>合作客户</small></div>
+          <div class="stat-item"><span class="stat-num" data-count="99">0</span><small>好评率%</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 技能 -->
+<section id="skills" class="section section-alt">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="section-tag">SKILLS</span>
+      <h2 class="section-title">专业技能</h2>
+      <p class="section-sub">持续学习，保持对新技术的好奇心</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card reveal-up" style="--delay:0.05s">
+        <div class="skill-bar-row"><span>HTML / CSS</span><em>95%</em></div>
+        <div class="skill-bar"><i style="--w:95%"></i></div>
+        <div class="skill-bar-row"><span>JavaScript</span><em>90%</em></div>
+        <div class="skill-bar"><i style="--w:90%"></i></div>
+        <div class="skill-bar-row"><span>Vue / React</span><em>85%</em></div>
+        <div class="skill-bar"><i style="--w:85%"></i></div>
+        <div class="skill-bar-row"><span>Node.js</span><em>75%</em></div>
+        <div class="skill-bar"><i style="--w:75%"></i></div>
+      </div>
+      <div class="skill-icons reveal-up" style="--delay:0.15s">
+        <div class="icon-card"><i class="fa-brands fa-html5"></i><span>HTML5</span></div>
+        <div class="icon-card"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></div>
+        <div class="icon-card"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+        <div class="icon-card"><i class="fa-brands fa-vuejs"></i><span>Vue.js</span></div>
+        <div class="icon-card"><i class="fa-brands fa-react"></i><span>React</span></div>
+        <div class="icon-card"><i class="fa-brands fa-node-js"></i><span>Node.js</span></div>
+        <div class="icon-card"><i class="fa-brands fa-git-alt"></i><span>Git</span></div>
+        <div class="icon-card"><i class="fa-brands fa-figma"></i><span>Figma</span></div>
+        <div class="icon-card"><i class="fa-brands fa-sass"></i><span>Sass</span></div>
+        <div class="icon-card"><i class="fa-solid fa-database"></i><span>MySQL</span></div>
+        <div class="icon-card"><i class="fa-brands fa-docker"></i><span>Docker</span></div>
+        <div class="icon-card"><i class="fa-brands fa-npm"></i><span>Webpack</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 作品展示 -->
+<section id="projects" class="section">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="section-tag">PROJECTS</span>
+      <h2 class="section-title">精选作品</h2>
+      <p class="section-sub">一些我引以为豪的项目案例</p>
+    </div>
+    <div class="filter-bar reveal-up">
+      <button class="filter-btn active" data-filter="all">全部</button>
+      <button class="filter-btn" data-filter="web">网页应用</button>
+      <button class="filter-btn" data-filter="ui">UI 设计</button>
+      <button class="filter-btn" data-filter="mobile">移动端</button>
+    </div>
+    <div class="projects-grid" id="projectsGrid">
+
+      <article class="project-card reveal-up" data-cat="web" style="--delay:0.05s">
+        <div class="project-thumb thumb-1">
+          <div class="project-overlay">
+            <a href="#" aria-label="预览"><i class="fa-solid fa-eye"></i></a>
+            <a href="#" aria-label="源码"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+        <div class="project-body">
+          <span class="project-cat">网页应用</span>
+          <h3>电商管理后台</h3>
+          <p>基于 Vue3 + Element Plus 构建的电商数据管理系统，支持订单、商品、用户多维度管理。</p>
+          <div class="tags"><span>Vue3</span><span>Pinia</span><span>ECharts</span></div>
+        </div>
+      </article>
+
+      <article class="project-card reveal-up" data-cat="ui" style="--delay:0.1s">
+        <div class="project-thumb thumb-2">
+          <div class="project-overlay">
+            <a href="#" aria-label="预览"><i class="fa-solid fa-eye"></i></a>
+            <a href="#" aria-label="源码"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+        <div class="project-body">
+          <span class="project-cat">UI 设计</span>
+          <h3>金融理财 App 概念设计</h3>
+          <p>面向年轻用户的理财类产品界面设计，注重信息层级与视觉一致性。</p>
+          <div class="tags"><span>Figma</span><span>Prototype</span><span>UX</span></div>
+        </div>
+      </article>
+
+      <article class="project-card reveal-up" data-cat="mobile" style="--delay:0.15s">
+        <div class="project-thumb thumb-3">
+          <div class="project-overlay">
+            <a href="#" aria-label="预览"><i class="fa-solid fa-eye"></i></a>
+            <a href="#" aria-label="源码"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+        <div class="project-body">
+          <span class="project-cat">移动端</span>
+          <h3>健康打卡小程序</h3>
+          <p>基于微信小程序开发的健身打卡应用，含数据统计与社交打卡功能。</p>
+          <div class="tags"><span>WXML</span><span>Node.js</span><span>MongoDB</span></div>
+        </div>
+      </article>
+
+      <article class="project-card reveal-up" data-cat="web" style="--delay:0.2s">
+        <div class="project-thumb thumb-4">
+          <div class="project-overlay">
+            <a href="#" aria-label="预览"><i class="fa-solid fa-eye"></i></a>
+            <a href="#" aria-label="源码"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+        <div class="project-body">
+          <span class="project-cat">网页应用</span>
+          <h3>个人博客系统</h3>
+          <p>使用 React + Express 自主开发的全栈博客平台，支持 Markdown 编辑与标签检索。</p>
+          <div class="tags"><span>React</span><span>Express</span><span>MySQL</span></div>
+        </div>
+      </article>
+
+      <article class="project-card reveal-up" data-cat="ui" style="--delay:0.25s">
+        <div class="project-thumb thumb-5">
+          <div class="project-overlay">
+            <a href="#" aria-label="预览"><i class="fa-solid fa-eye"></i></a>
+            <a href="#" aria-label="源码"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+        <div class="project-body">
+          <span class="project-cat">UI 设计</span>
+          <h3>品牌视觉重塑</h3>
+          <p>为初创咖啡品牌完成 Logo 与全套视觉物料设计，塑造年轻化品牌形象。</p>
+          <div class="tags"><span>Illustrator</span><span>Branding</span></div>
+        </div>
+      </article>
+
+      <article class="project-card reveal-up" data-cat="mobile" style="--delay:0.3s">
+        <div class="project-thumb thumb-6">
+          <div class="project-overlay">
+            <a href="#" aria-label="预览"><i class="fa-solid fa-eye"></i></a>
+            <a href="#" aria-label="源码"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+        <div class="project-body">
+          <span class="project-cat">移动端</span>
+          <h3>跨平台记账应用</h3>
+          <p>使用 React Native 开发的记账 App，支持 iOS / Android 双端同步。</p>
+          <div class="tags"><span>React Native</span><span>Redux</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- 经历时间线 -->
+<section id="timeline" class="section section-alt">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="section-tag">EXPERIENCE</span>
+      <h2 class="section-title">工作与教育经历</h2>
+      <p class="section-sub">一路走来的成长足迹</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item reveal-up">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2023 — 至今</span>
+          <h3>高级前端开发工程师 · 某科技公司</h3>
+          <p>负责核心产品前端架构设计与团队技术选型，推动组件库与工程化建设。</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal-up">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2021 — 2023</span>
+          <h3>前端开发工程师 · 某互联网公司</h3>
+          <p>参与多个中大型 Web 项目的开发与维护，积累丰富的性能优化经验。</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal-up">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2017 — 2021</span>
+          <h3>计算机科学与技术 · 本科</h3>
+          <p>系统学习计算机基础理论与编程实践，多次获得校级奖学金。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 联系方式 -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="section-head reveal-up">
+      <span class="section-tag">CONTACT</span>
+      <h2 class="section-title">联系我</h2>
+      <p class="section-sub">有想法或合作意向？欢迎随时与我联系</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal-left">
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div><b>邮箱</b><p>hello@zhangsan.dev</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+          <div><b>电话</b><p>+86 138 0000 0000</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div><b>地址</b><p>中国 · 上海</p></div>
+        </div>
+        <div class="contact-socials">
+          <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" aria-label="领英"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="微信"><i class="fa-brands fa-weixin"></i></a>
+          <a href="#" aria-label="微博"><i class="fa-brands fa-weibo"></i></a>
+        </div>
+      </div>
+      <form class="contact-form reveal-right" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <input type="text" id="name" name="name" placeholder=" " required>
+            <label for="name">你的姓名</label>
+            <span class="form-error">请输入姓名</span>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder=" " required>
+            <label for="email">你的邮箱</label>
+            <span class="form-error">请输入有效邮箱</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="text" id="subject" name="subject" placeholder=" " required>
+          <label for="subject">主题</label>
+          <span class="form-error">请输入主题</span>
+        </div>
+        <div class="form-group">
+          <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
+          <label for="message">留言内容</label>
+          <span class="form-error">请输入留言内容</span>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">
+          <span>发送消息</span> <i class="fa-solid fa-paper-plane"></i>
+        </button>
+        <p class="form-success" id="formSuccess">✅ 消息已发送，我会尽快回复你！</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="#home" class="logo">张三<span>.dev</span></a>
+    <p>&copy; <span id="year"></span> 张三. 保留所有权利。用 <i class="fa-solid fa-heart"></i> 精心打造。</p>
+    <div class="footer-socials">
+      <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="#" aria-label="领英"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="#" aria-label="微信"><i class="fa-brands fa-weixin"></i></a>
+      <a href="#" aria-label="邮箱"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </div>
+</footer>
+
+<button id="backToTop" aria-label="回到顶部"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script src="js/main.js"></script>
+</body>
+</html>
