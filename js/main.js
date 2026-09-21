@@ -152,6 +152,34 @@
     revealEls.forEach((el) => io.observe(el));
   }
 
+  /* ---------- 5.1 作品卡片懒加载（级联入场） ---------- */
+  function initLazyCards() {
+    const cards = document.querySelectorAll('.project-card.lazy-card');
+    if (!cards.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+      cards.forEach((c) => c.classList.add('lazy-in'));
+      return;
+    }
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const target = entry.target;
+        // 当前可见且未入场的卡片，按出现顺序级联延迟
+        const pending = Array.from(cards).filter(
+          (c) => !c.classList.contains('hide') && !c.classList.contains('lazy-in')
+        );
+        const idx = pending.indexOf(target);
+        target.style.animationDelay = (idx > 0 ? idx * 0.12 : 0) + 's';
+        target.classList.add('lazy-in');
+        io.unobserve(target);
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    cards.forEach((c) => io.observe(c));
+  }
+
   /* ---------- 6. 技能条 & 数字统计 ---------- */
   function initSkillBarsAndCounters() {
     const bars = document.querySelectorAll('.skill-bar');
@@ -330,6 +358,7 @@
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     initSkillBarsAndCounters();
+    initLazyCards();
 
     // 预加载动画结束后再触发首屏 reveal，保证入场节奏
     window.addEventListener('load', () => {

@@ -524,6 +524,16 @@ input, textarea { font-family: inherit; }
 }
 .project-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); }
 .project-card.hide { display: none; }
+/* 作品卡片懒加载：进入视口后级联入场（播放状态由 JS 控制） */
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(36px) scale(0.96); }
+  to { opacity: 1; transform: none; }
+}
+.js .lazy-card {
+  animation: cardIn 0.65s cubic-bezier(0.65, 0, 0.35, 1) backwards;
+  animation-play-state: paused;
+}
+.lazy-card.lazy-in { animation-play-state: running; }
 .project-thumb {
   position: relative;
   height: 200px;
@@ -822,6 +832,7 @@ body.menu-open { overflow: hidden; }
   .js .reveal-up,
   .js .reveal-left,
   .js .reveal-right { opacity: 1; transform: none; transition: none; }
+  .js .lazy-card { animation: none; opacity: 1; transform: none; }
   .blob, .cursor-blink, .scroll-indicator span::before,
   .avatar-circle::before, .wave, .loader-logo { animation: none; }
 }
